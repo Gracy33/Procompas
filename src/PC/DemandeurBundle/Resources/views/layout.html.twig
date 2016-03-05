@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head %}
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <title>{% block title %}{% endblock %} - Procompas Application </title>
+    {% endblock %}	
+</head>
+<body>
+    
+
+    <div class="container">
+    <div id="header" class="jumbotron">
+      <h1>Procompas Aplication</h1>  
+      <!--<img id="logo" src="{{ asset('img/compass.png') }}"/>-->
+    </div>
+
+    <div class="row">
+      <div id="menu" class="col-md-3">        
+      </div>
+
+      <div id="content" class="col-md-9">
+        <div class="content">{% block content %}{% endblock %}</div>
+        {% block body %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <hr>
+
+    <footer id="footer" class="jumbotron" >
+      <p> &copy; Copyright {{ 'now'|date('Y') }} by Procompas</p>
+    </footer>
+  </div>
+
+  {% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  {% endblock %}
+</body>
+</html>
+
