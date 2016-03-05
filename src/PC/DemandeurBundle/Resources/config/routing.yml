@@ -1,3 +1,11 @@
 pc_demandeur_homepage:
     path:     /
-    defaults: { _controller: PCDemandeurBundle:Default:index }
+    defaults: { _controller: PCDemandeurBundle:Authentification:index }
+
+pc_demandeur_connexion:
+    path: /connect
+    defaults: {_controller : PCDemandeurBundle:Authentification:connect }
+    
+pc_demandeur_resultat:
+    path: /result
+    defaults: {_controller : PCDemandeurBundle:Diagnostique:calcule}

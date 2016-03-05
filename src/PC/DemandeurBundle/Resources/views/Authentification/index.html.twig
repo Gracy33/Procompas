@@ -1,0 +1,18 @@
+{# empty Twig template #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bonjour</title>
+    </head>
+    <body>
+        <h2>Test</h2>
+        {%if prenom is defined%}
+        <p>{{prenom}}</p>
+        {%else%}
+         <p>L'utilisateur n'existe pas!</p>
+        {%endif%}
+        
+        <p>{{ app.session.get('prenom') }}</p>
+        
+    </body>
+</html>
