@@ -43,9 +43,9 @@ class AuthentificationController extends Controller
      
 //            $content = $this->get('templating')->render('PCDemandeurBundle:Authentification:index.html.twig');
 //            return new Response($content);
-//            
-        
-
+// 
+            
+            
     }
     
 //    public function disconnect()

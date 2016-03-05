@@ -113,10 +113,12 @@ class DiagnostiqueController extends Controller
              $diagnostiqueRepository = $em->getRepository('PCDemandeurBundle:DiagnostiqueResult')->find(6);
             //$result = "Création projet pro assisté ";
         }
-        $titre = $diagnostiqueRepository->getTitre();
-        $explication = $diagnostiqueRepository->getExplication();
+        $resume = $diagnostiqueRepository->getResume();
+        $conseil = $diagnostiqueRepository->getExpliconseil();
+        $savoir = $diagnostiqueRepository->getExplisavoir();
+        $astuce = $diagnostiqueRepository->getExpliastuce();
         $content = $this->get('templating')->render('PCDemandeurBundle:Diagnostique:resultat.html.twig', array('a' => $total1a, 'b' =>$total1b, 'c' => $total1c, 
-            'total' => $totalQ1, 'total1' => $totalQ2, 'total2' => $totalQ3, 'titre' => $titre, 'explication'=>$explication ));
+            'total' => $totalQ1, 'total1' => $totalQ2, 'total2' => $totalQ3, 'resume'=>$resume, 'conseil' =>$conseil, 'savoir'=>$savoir, 'astuce' => $astuce ));
         return new Response($content);
      
     }

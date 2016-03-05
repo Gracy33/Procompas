@@ -24,16 +24,51 @@ class DiagnostiqueResult
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=255)
+     * @ORM\Column(name="resume", type="text")
      */
-    private $titre;
+    private $resume;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="explication", type="text")
+     * @ORM\Column(name="titreconseil", type="string", length=255)
      */
-    private $explication;
+    private $titreconseil;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="expliconseil", type="text")
+     */
+    private $expliconseil;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titresavoir", type="string", length=255)
+     */
+    private $titresavoir;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="explisavoir", type="text")
+     */
+    private $explisavoir;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titreastuce", type="string", length=255)
+     */
+    private $titreastuce;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="expliastuce", type="text")
+     */
+    private $expliastuce;
 
 
     /**
@@ -47,51 +82,171 @@ class DiagnostiqueResult
     }
 
     /**
-     * Set titre
+     * Set resume
      *
-     * @param string $titre
+     * @param string $resume
      *
      * @return DiagnostiqueResult
      */
-    public function setTitre($titre)
+    public function setResume($resume)
     {
-        $this->titre = $titre;
+        $this->resume = $resume;
 
         return $this;
     }
 
     /**
-     * Get titre
+     * Get resume
      *
      * @return string
      */
-    public function getTitre()
+    public function getResume()
     {
-        return $this->titre;
+        return $this->resume;
     }
 
     /**
-     * Set explication
+     * Set titreconseil
      *
-     * @param string $explication
+     * @param string $titreconseil
      *
      * @return DiagnostiqueResult
      */
-    public function setExplication($explication)
+    public function setTitreconseil($titreconseil)
     {
-        $this->explication = $explication;
+        $this->titreconseil = $titreconseil;
 
         return $this;
     }
 
     /**
-     * Get explication
+     * Get titreconseil
      *
      * @return string
      */
-    public function getExplication()
+    public function getTitreconseil()
     {
-        return $this->explication;
+        return $this->titreconseil;
+    }
+
+    /**
+     * Set expliconseil
+     *
+     * @param string $expliconseil
+     *
+     * @return DiagnostiqueResult
+     */
+    public function setExpliconseil($expliconseil)
+    {
+        $this->expliconseil = $expliconseil;
+
+        return $this;
+    }
+
+    /**
+     * Get expliconseil
+     *
+     * @return string
+     */
+    public function getExpliconseil()
+    {
+        return $this->expliconseil;
+    }
+
+    /**
+     * Set titresavoir
+     *
+     * @param string $titresavoir
+     *
+     * @return DiagnostiqueResult
+     */
+    public function setTitresavoir($titresavoir)
+    {
+        $this->titresavoir = $titresavoir;
+
+        return $this;
+    }
+
+    /**
+     * Get titresavoir
+     *
+     * @return string
+     */
+    public function getTitresavoir()
+    {
+        return $this->titresavoir;
+    }
+
+    /**
+     * Set explisavoir
+     *
+     * @param string $explisavoir
+     *
+     * @return DiagnostiqueResult
+     */
+    public function setExplisavoir($explisavoir)
+    {
+        $this->explisavoir = $explisavoir;
+
+        return $this;
+    }
+
+    /**
+     * Get explisavoir
+     *
+     * @return string
+     */
+    public function getExplisavoir()
+    {
+        return $this->explisavoir;
+    }
+
+    /**
+     * Set titreastuce
+     *
+     * @param string $titreastuce
+     *
+     * @return DiagnostiqueResult
+     */
+    public function setTitreastuce($titreastuce)
+    {
+        $this->titreastuce = $titreastuce;
+
+        return $this;
+    }
+
+    /**
+     * Get titreastuce
+     *
+     * @return string
+     */
+    public function getTitreastuce()
+    {
+        return $this->titreastuce;
+    }
+
+    /**
+     * Set expliastuce
+     *
+     * @param string $expliastuce
+     *
+     * @return DiagnostiqueResult
+     */
+    public function setExpliastuce($expliastuce)
+    {
+        $this->expliastuce = $expliastuce;
+
+        return $this;
+    }
+
+    /**
+     * Get expliastuce
+     *
+     * @return string
+     */
+    public function getExpliastuce()
+    {
+        return $this->expliastuce;
     }
 }
 
