@@ -1,0 +1,3 @@
+pc_demandeur_homepage:
+    path:     /
+    defaults: { _controller: PCDemandeurBundle:Default:index }
