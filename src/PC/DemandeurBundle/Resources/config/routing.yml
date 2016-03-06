@@ -13,3 +13,7 @@ pc_demandeur_resultat:
 pc_demandeur_deconnexion:
     path: /deco
     defaults : {_controller: PCDemandeurBundle:Authentification:disconnect}
+
+pc_demandeur_projetprofessionnel:
+    path: /projetpro
+    defaults : {_controller: PCDemandeurBundle:Projetpro:projet}

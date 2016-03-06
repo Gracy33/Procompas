@@ -1,0 +1,52 @@
+{% extends "PCDemandeurBundle::layout.html.twig" %}
+
+{% block title %}Projet Professionnel{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">            
+        .container1{ width: 80%; margin:auto;}
+        p{ text-align: justify;}
+        .form-control{width: 800px; }
+        .form-group{margin-top: 35px;}
+    </style>
+{% endblock %}
+        
+{% block content %}
+<div class="container1">
+    <form role="form">
+        
+            <div class="form-group ">          
+                <label for="">Définissez les qualités que vous attendez de votre métier en vous appuyant sur votre personnalité</label>
+                <textarea rows="4" cols="50" class="form-control"></textarea>           
+            </div>
+            <input  type="button" value="MBTI - Testez-vous!">
+        
+
+            <div class="form-group">
+                <label for="">Définissez la place que vous souhaitez donner au monde professionnel</label>
+                <textarea rows="4" cols="50" class="form-control" class="box"></textarea>
+            </div>
+            <input  type="button" value="Accéder au mind-mapping personnel">
+
+            <div class="form-group">
+                <label for="">Métier spécifique visé :</label>
+                <textarea rows="4" cols="50" class="form-control" class="box"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="">Rencontrez des personnes de votre futur domaine :</label>
+                <textarea rows="4" cols="50" class="form-control" class="box"></textarea>
+            </div>
+            <input  type="button" value="Savoir se présenter : elevator Pitch">
+            <input type="button" value="Informations à obtenir">
+            
+            <div class="form-group">
+                <label for="">Définissez vos forces, vos axes à travailler, vos opportunités et vos menaces:</label>
+                <textarea rows="4" cols="50" class="form-control" class="box"></textarea>
+            </div>
+            <input type="button" value="Accéder à la matrice SWOT">
+        <button type="submit" class="btn btn-default">Enregistrer</button>
+   </form>
+</div>
+{% endblock %}
+       
