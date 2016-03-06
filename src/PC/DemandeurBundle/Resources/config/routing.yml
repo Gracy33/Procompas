@@ -9,3 +9,7 @@ pc_demandeur_connexion:
 pc_demandeur_resultat:
     path: /result
     defaults: {_controller : PCDemandeurBundle:Diagnostique:calcule}
+
+pc_demandeur_deconnexion:
+    path: /deco
+    defaults : {_controller: PCDemandeurBundle:Authentification:disconnect}

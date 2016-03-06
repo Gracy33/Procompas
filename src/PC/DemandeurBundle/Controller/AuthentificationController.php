@@ -27,11 +27,15 @@ class AuthentificationController extends Controller
 //            'form' => $form->createView(),
 //        ));
     }
-    public function inscriptionAction(){}
+    public function inscriptionAction(Request $request){
+        $utilisateur = new Utilisateur();
+        
+        
+    }
     public function connectAction(Request $request)
     {
-        $login= 'elo';
-        $password = 'elo';
+        $login= 'polo';
+        $password = 'polo';
         $em = $this->getDoctrine()->getManager();
         $utilisateur = $em->getRepository('PCDemandeurBundle:Utilisateur')->findBy(array('login' => $login, 'password' => $password));
         
@@ -46,14 +50,15 @@ class AuthentificationController extends Controller
      
 //            $content = $this->get('templating')->render('PCDemandeurBundle:Authentification:index.html.twig');
 //            return new Response($content);
-// 
-            
-            
+//      
     }
     
-//    public function disconnect()
-//    {
-//        $this->get('session')->clear();
-//    }
+    public function disconnectAction()
+    {
+        $this->get('session')->clear();
+        $content = $this->get('templating')->render('PCDemandeurBundle:Authentification:index.html.twig', array('prenom' =>$prenom));
+            return new Response($content);
+     
+    }
 }
 
