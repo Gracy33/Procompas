@@ -1,6 +1,40 @@
 {# empty Twig template #}
+        {% extends "PCDemandeurBundle::layout.html.twig" %}
 
-<p>{{resume}}</p>
-<p>{{conseil}}</p>
-<p>{{savoir}}</p>
-<p>{{astuce}}</p>
+        {% block title %}Index{% endblock %}
+        {% block head %}
+            {{ parent() }}
+            <style type="text/css">            
+                .important {  font-size: 16px;} <!--#336699-->
+                .advice { color: #000;}
+                .container1{ width: 90%; margin:auto;}
+                p{ text-align: justify;}
+            </style>
+        {% endblock %}
+        {% block content %}
+            <div class="container1">
+                <h1>Diagnostic</h1>
+                    <p id="active_auton" class="important">
+                    {{resume}} <!--Resumé-->
+                    </p>
+                <div id="description" >
+                
+                    <h3>Nos conseils :</h3>
+                    <p id="active_auton" class="important">
+                        {{conseil}}
+                    </p>
+                 
+                    <h3>A savoir :</h3>
+                    <p id="active_auton" class="important">
+                       {{savoir}}
+                    </p>
+
+                    <h3>Astuce :</h3>
+                    <p id="active_auton" class="important">
+                        {{astuce}}
+                    </p>
+                </div>
+            </div>
+
+        {% endblock %}
+       

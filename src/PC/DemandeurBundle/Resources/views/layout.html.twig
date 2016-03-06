@@ -8,12 +8,13 @@
         <style type="text/css"> 
                 body { font-family: georgia;}             
                 #logo {width: 143px; height: 143px; }
-                #name {float: right; margin-top: 20px;}
+                #name {float: right; margin-top: 20px; color: white;}
                 .name {font-family: freestyle script; font-size: 68px;}
                 #img_logo { float: left;}
                 .clearfix {clear: both;}
-                #header #footer {background-color: lightblue;}
+                #header, .jumbotron, #footer {background-color: black;}
                 #footer.jumbotron { margin: auto; padding-top: 13px; height: 13px; font-size: 12px;}
+                .logg_in p{text-align: right; font-size: 16px; color: white;}
         </style>
   {% endblock %}	
 </head>
@@ -21,26 +22,36 @@
     
 
     <div class="container">
-    <div id="header" class="jumbotron">
-      <div id="name">
-        <h1 class="name">Moteev Application</h1>  
-      </div>
-      <div id="img_logo">
-        <img id="logo" src="{{ asset('img/compass.png') }}"/>
-      </div>
-      <div class="clearfix"></div>
-    </div>
+        <div id="header" class="jumbotron">
+            {%if app.session.get('prenom') != null%}
+            <div class="logg_in"
+            
+                <span class="glyphicon glyphicon-user"></span>
+                <p>{{ app.session.get('prenom') }} {{ app.session.get('nom') }}  <a href="#" >  Se déconnecter</a></p>
+            
+            </div>
+                {%endif%}
+            <div id="name">
+                <h1 class="name">Moteev Application</h1>  
+            </div>
+            <div id="img_logo">
+                <img id="logo" src="{{ asset('img/logo.png') }}"/>
+            </div>
+        <div class="clearfix"></div>
+        </div>
+            
 
-    <div class="row">
+    <!--<div class="row">
       <div id="menu" class="col-md-3">        
-      </div>
+      </div>-->
 
-      <div id="content" class="col-md-9">
+      <div id="content" >
         <div class="content">{% block content %}{% endblock %}</div>
         {% block body %}
         {% endblock %}
       </div>
     </div>
+</div>
 
     <hr>
 

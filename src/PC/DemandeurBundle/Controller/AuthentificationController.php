@@ -27,6 +27,7 @@ class AuthentificationController extends Controller
 //            'form' => $form->createView(),
 //        ));
     }
+    public function inscriptionAction(){}
     public function connectAction(Request $request)
     {
         $login= 'elo';
@@ -35,9 +36,11 @@ class AuthentificationController extends Controller
         $utilisateur = $em->getRepository('PCDemandeurBundle:Utilisateur')->findBy(array('login' => $login, 'password' => $password));
         
         $prenom = $utilisateur[0]->getPrenom();
+        $nom = $utilisateur[0]->getNom();
         
             $session = $request->getSession();
             $session->set('prenom',$prenom );
+            $session->set('nom', $nom);
             $content = $this->get('templating')->render('PCDemandeurBundle:Authentification:index.html.twig', array('prenom' =>$prenom));
             return new Response($content);
      
