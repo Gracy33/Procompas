@@ -9,6 +9,8 @@
                 .advice { color: #000;}
                 .container1{ width: 90%; margin:auto;}
                 p{ text-align: justify;}
+                #link{text-decoration: none;}
+                #button{ margin-top: 25px; height: 50px; width: 100%; font-size: 18px;}
             </style>
         {% endblock %}
         {% block content %}
@@ -34,6 +36,7 @@
                         {{astuce}}
                     </p>
                 </div>
+                <button type="submit" id="button" class="btn btn-default"><a href="#" id="link">Créez votre Projet Professionnel</a></button>
             </div>
 
         {% endblock %}
