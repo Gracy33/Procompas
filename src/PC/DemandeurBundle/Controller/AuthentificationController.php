@@ -12,20 +12,47 @@ use Symfony\Component\Form\Exception\Core\Type\TextType;
 class AuthentificationController extends Controller
 {
     public function indexAction(Request $request){
+      
+        $form=$this->createFormBuilder(new Utilisateur)
+                ->add('login')
+                ->add('password')
+                ->add('save',  SubmitType::class, array('label'=>'Login'))
+                ->getForm();
         
-        $content = $this->get('templating')->render('PCDemandeurBundle:Authentification:index.html.twig');
-        return new Response($content);
-//     $utilisateur = new Utilisateur();
-//
-//        $form = $this->createFormBuilder($utilisateur)
-//            ->add('nom', TextType::class)
-//            ->add('prenom', DateType::class)
-//            ->add('save', SubmitType::class, array('label' => 's\'enregistrer'))
-//            ->getForm();
-//
-//        return $this->render('PCDemandeurBundle:Authentification:index.html.twig', array(
-//            'form' => $form->createView(),
-//        ));
+        $form->handleRequest($request);
+      
+        if($request->isMethod('post') && $form->isValid())
+        {
+            $array = $request->request->get('form');
+            $login;
+            $password;
+            foreach($array as $key => $valeur)
+            {
+                if($key == 'login')
+                {
+                    $login = $valeur;
+                }
+                if($key == 'password')
+                {
+                    $password = $valeur;
+                }
+            }
+            
+            $em = $this->getDoctrine()->getManager();
+            $utilisateur = $em->getRepository('PCDemandeurBundle:Utilisateur')->findBy(array('login' => $login, 'password' => $password));
+        
+            $prenom = $utilisateur[0]->getPrenom();
+            $nom = $utilisateur[0]->getNom();
+        
+            $session = $request->getSession();
+            $session->set('prenom',$prenom );
+            $session->set('nom', $nom);
+            $content = $this->get('templating')->render('PCDemandeurBundle:Diagnostique:resultat.html.twig', array('prenom' =>$prenom));
+            return new Response($content);
+        }
+
+        return $this->render('PCDemandeurBundle:Authentification:index.html.twig', array('form' =>$form->createView()));
+
     }
     public function inscriptionAction(Request $request){
         $utilisateur = new Utilisateur();

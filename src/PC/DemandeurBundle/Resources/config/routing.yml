@@ -13,3 +13,4 @@ pc_demandeur_resultat:
 pc_demandeur_deconnexion:
     path: /deco
     defaults : {_controller: PCDemandeurBundle:Authentification:disconnect}
+

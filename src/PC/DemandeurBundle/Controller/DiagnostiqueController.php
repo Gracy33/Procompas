@@ -122,4 +122,8 @@ class DiagnostiqueController extends Controller
         return new Response($content);
      
     }
+    public function projetProAction(Request $request){
+        $content = $this->get('templating')->render('PCDemandeurBundle:Diagnostique:projetPro.html.twig');
+            return new Response($content);
+    }
 }

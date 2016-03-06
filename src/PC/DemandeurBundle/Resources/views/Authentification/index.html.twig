@@ -1,18 +1,60 @@
 {# empty Twig template #}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Bonjour</title>
-    </head>
-    <body>
-        <h2>Test</h2>
-        {%if prenom is defined%}
-        <p>{{prenom}}</p>
-        {%else%}
-         <p>L'utilisateur n'existe pas!</p>
-        {%endif%}
-        
-        <p>{{ app.session.get('prenom') }}</p>
-        
-    </body>
-</html>
+{% extends "PCDemandeurBundle::layout.html.twig" %}
+    {% block head %}
+            {{ parent() }}
+            <style type="text/css"> 
+                .formulaire{ width: 700px; margin:auto;}
+                .titre{text-align: center;}
+                .form-control{width: 300px;}
+                .ou{margin-left: 100px;}
+                .container{font-family: freestyle script;}
+                button{ margin-left: 200px;}
+            </style>
+    {% endblock %}
+{% block body %}
+    {{form(form)}}
+    <div class="container">
+        <div class='formulaire'>
+            <h1 class='titre'>Bienvenue sur Moteev</h1>
+            <h3>Veuillez vous connecter afin d'accéder à votre compte</h3>
+            <h3>Déjà inscrit? Connectez-vous</h3>
+            <form role="form" class='form'>
+                <div class="form-group">
+                  <label >Login</label>
+                  <input type="text" class="form-control" id="login">
+                </div>
+                <div class="form-group">
+                  <label>Mot de passe</label>
+                  <input type="password" class="form-control" id="pwd">
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox"> Se souvenir de moi</label>
+                </div>
+                <button type="submit" class="btn btn-default">Se connecter</button>
+              </form>
+            <hr/>
+            <h3 class='ou'>OU</h3>
+            <hr/>
+            <h3>Inscrivez-vous</h3>
+             <form role="form" class='form'>
+                 <div class="form-group">
+                  <label >Nom</label>
+                  <input type="text" class="form-control" id="login required">
+                </div>
+                <div class="form-group">
+                  <label>Prénom</label>
+                  <input type="password" class="form-control" id="pwd" required>
+                </div>
+                <div class="form-group">
+                  <label >Login</label>
+                  <input type="text" class="form-control" id="login" required>
+                </div>
+                <div class="form-group">
+                  <label>Mot de passe</label>
+                  <input type="password" class="form-control" id="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">S'inscrire</button>
+              </form>
+        </div>
+    </div>
+{% endblock %}
