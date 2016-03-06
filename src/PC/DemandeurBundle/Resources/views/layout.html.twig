@@ -4,16 +4,31 @@
 	{% block head %}
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <title>{% block title %}{% endblock %} - Procompas Application </title>
-    {% endblock %}	
+        <title>{% block title %}{% endblock %} - Moteev Application </title>
+        <style type="text/css"> 
+                body { font-family: georgia;}             
+                #logo {width: 143px; height: 143px; }
+                #name {float: right; margin-top: 20px;}
+                .name {font-family: freestyle script; font-size: 68px;}
+                #img_logo { float: left;}
+                .clearfix {clear: both;}
+                #header #footer {background-color: lightblue;}
+                #footer.jumbotron { margin: auto; padding-top: 13px; height: 13px; font-size: 12px;}
+        </style>
+  {% endblock %}	
 </head>
 <body>
     
 
     <div class="container">
     <div id="header" class="jumbotron">
-      <h1>Procompas Aplication</h1>  
-      <!--<img id="logo" src="{{ asset('img/compass.png') }}"/>-->
+      <div id="name">
+        <h1 class="name">Moteev Application</h1>  
+      </div>
+      <div id="img_logo">
+        <img id="logo" src="{{ asset('img/compass.png') }}"/>
+      </div>
+      <div class="clearfix"></div>
     </div>
 
     <div class="row">
@@ -30,7 +45,7 @@
     <hr>
 
     <footer id="footer" class="jumbotron" >
-      <p> &copy; Copyright {{ 'now'|date('Y') }} by Procompas</p>
+       &copy; Copyright {{ 'now'|date('Y') }} by <strong>Procompas</strong>
     </footer>
   </div>
 
